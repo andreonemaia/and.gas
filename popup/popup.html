@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>and.gas</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="Monitor de gas fee Ethereum">
+      <!-- Cabeçalho minimalista -->
+      <header class="app__header">
+        <p class="app__brand">and.gas</p>
+        <p class="app__subtitle">Ethereum · Propose Gas</p>
+      </header>
+
+      <!-- Display do preço atual -->
+      <section class="gas-display" aria-live="polite" aria-atomic="true">
+        <p class="gas-display__label">Gas atual</p>
+        <p class="gas-display__value" id="current-gas">—</p>
+        <p class="gas-display__unit">Gwei</p>
+        <p class="gas-display__meta" id="last-check">Aguardando leitura…</p>
+      </section>
+
+      <!-- Formulário de limite -->
+      <section class="alert-form">
+        <label class="alert-form__label" for="gas-limit-input">
+          Limite para notificação (Gwei)
+        </label>
+        <input
+          class="alert-form__input"
+          id="gas-limit-input"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="0.1"
+          placeholder="ex.: 15"
+          autocomplete="off"
+        />
+        <button class="alert-form__button" id="save-alert-btn" type="button">
+          Salvar Alerta
+        </button>
+      </section>
+
+      <!-- Status do alerta -->
+      <footer class="app__footer">
+        <p class="status" id="alert-status" role="status">
+          Alerta inativo — defina um limite e salve.
+        </p>
+        <p class="status status--error" id="error-status" hidden></p>
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

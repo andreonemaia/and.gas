@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "and.gas — Monitor de Gas Fee",
+  "version": "1.0.0",
+  "description": "Monitora o ProposeGasPrice da rede Ethereum via Etherscan e notifica quando o gas estiver no seu limite.",
+  "permissions": [
+    "alarms",
+    "storage",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://api.etherscan.io/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "and.gas — Monitor de Gas",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

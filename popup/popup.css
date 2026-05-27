@@ -1,0 +1,202 @@
+/**
+ * and.gas — Estética minimalista monocromática
+ * Tipografia limpa, alto contraste, muito espaço em branco.
+ */
+
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #0a0a0a;
+  --color-muted: #6b6b6b;
+  --color-border: #d4d4d4;
+  --color-surface: #f5f5f5;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --radius: 4px;
+  --popup-width: 320px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: var(--popup-width);
+  min-height: 380px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
+/* --- Cabeçalho --- */
+
+.app__header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-md);
+}
+
+.app__brand {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --- Display de gas --- */
+
+.gas-display {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.gas-display__label {
+  margin: 0;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+}
+
+.gas-display__value {
+  margin: var(--space-sm) 0 0;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.gas-display__value.is-loading {
+  opacity: 0.35;
+}
+
+.gas-display__unit {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.gas-display__meta {
+  margin: var(--space-md) 0 0;
+  font-size: 0.6875rem;
+  color: var(--color-muted);
+}
+
+/* --- Formulário --- */
+
+.alert-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.alert-form__label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.alert-form__input {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-fg);
+  border-radius: var(--radius);
+  outline: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.alert-form__input:focus {
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-fg);
+}
+
+.alert-form__input::placeholder {
+  color: #a3a3a3;
+}
+
+.alert-form__button {
+  margin-top: var(--space-sm);
+  padding: 0.75rem 1rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-fg);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.alert-form__button:hover {
+  opacity: 0.85;
+}
+
+.alert-form__button:active {
+  opacity: 0.7;
+}
+
+.alert-form__button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* --- Rodapé / status --- */
+
+.app__footer {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.status {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.status--active {
+  color: var(--color-fg);
+  font-weight: 500;
+}
+
+.status--error {
+  color: #404040;
+  margin-top: var(--space-xs);
+}
